@@ -7,7 +7,7 @@ public class Words {
 	public static String word;
 	public static String blanks;
 	
-	public static void text(String[] args) throws IOException {
+	public static void text() throws IOException {
 		
 		 BufferedReader reader = new BufferedReader(new FileReader("D:\\Java\\words.txt"));
 		 String line = reader.readLine();
@@ -25,6 +25,16 @@ public class Words {
 			word = randomWord;
 	
 			blanks =  new String (new char [word.length()]).replace("\0", "-");
+			Scanner userInput = new Scanner(System.in);
+			
+			while (Hangman.count < 4 && blanks.contains("-")) {
+				System.out.println("Please inter a letter");
+				System.out.println(blanks);
+				//System.out.println(word);
+				String expect = userInput.next();
+				Expect.letter(expect);
+			}
+			userInput.close();
 			
 		    reader.close();
 	}

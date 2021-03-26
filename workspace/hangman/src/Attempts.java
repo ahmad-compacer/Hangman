@@ -1,15 +1,18 @@
 
 public class Attempts {
 		public static void attempts() {
-			for(int i = 0; i < 4; i++ ) {
-				if (Hangman.count == i) {
-					int x = 4;
-					System.out.println("Wrong letter, you have "+ (x--) +" try again");
+			
+				if (Hangman.count == 1) {
+					System.out.println("Wrong letter, you have 3 attempts remaning");
+				}
+				if (Hangman.count == 2) {
+					System.out.println("Wrong letter, you have 2 attempts remaning");
+				}
+				if (Hangman.count == 3) {
+					System.out.println("Wrong letter, you have 1 attempts remaning");
 				}
 				if (Hangman.count == 4) {
 					System.out.println("GAME OVER! The word was " + Words.word);
-					break;
 				}
-			}
 		}
 }
